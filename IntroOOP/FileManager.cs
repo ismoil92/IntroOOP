@@ -122,12 +122,15 @@ public static class FileManager
             if(keyInfo.Key == ConsoleKey.UpArrow || keyInfo.Key == ConsoleKey.DownArrow ||
                 keyInfo.Key == ConsoleKey.LeftArrow || keyInfo.Key == ConsoleKey.RightArrow)
             {
-                Console.SetCursorPosition(currentLeft - 1, top);
-                Console.Write(" ");
-                Console.SetCursorPosition(currentLeft - 1, top);
-                if(keyInfo.Key == ConsoleKey.UpArrow)
+                if (command.Length > 0)
                 {
-                    if(!string.IsNullOrEmpty(_command))
+                    Console.SetCursorPosition(currentLeft - 1, top);
+                    Console.Write(" ");
+                    Console.SetCursorPosition(currentLeft - 1, top);
+                }
+                if (keyInfo.Key == ConsoleKey.UpArrow)
+                {
+                    if (!string.IsNullOrEmpty(_command))
                     {
                         DrawConsole2(_command);
                     }
@@ -167,13 +170,165 @@ public static class FileManager
     /// <param name="command">консольная команда</param>
     static void DrawConsole2(string command)
     {
-        DrawConsole(GetShortPath(command), 0, 26, WIDTH, 3);
-        Console.Write($"{command}>");
+        DrawConsole(GetShortPath(currentDirectory), 0, 26, WIDTH, 3);
+        Console.Write($"{command}");
     }
 
-    //static void ParseCommandString(string command)
-    //{
+    /// <summary>
+    /// Метод, для преобразования в командную строку для выполнение команд
+    /// </summary>
+    /// <param name="command">команда для консоли</param>
+    static void ParseCommandString(string command)
+    {
+        string[] commands = command.ToLower().Split(' ');
+        if (commands.Length > 0)
+        {
+            switch (commands[0])
+            {
+                case "cd": // переход на другую директорию
+                    if (commands.Length>1)
+                    {
+                        if(Directory.Exists(commands[1]) && commands[1]!="..")
+                        {
+                            currentDirectory = commands[1];
+                        }
+                        else if (commands[1]=="..")
+                        {
+                            //Переход на уровень выше каталога.
+                            DirectoryInfo dir = Directory.GetParent(currentDirectory);
+                            currentDirectory = dir.ToString();
+                        }
+                    }
+                    break;
+                case "ls": // Пейджинг т.е. страничный режим
+                    if(commands.Length>1 && Directory.Exists(commands[1]))
+                    {
+                        if(commands.Length>3 && commands[2]=="-p" && int.TryParse(commands[3], out int n))
+                        {
+                            DrawTree(new DirectoryInfo(commands[1]), n);
+                        }
+                        else
+                        {
+                            DrawTree(new DirectoryInfo(commands[1]), 1);
+                        }
+                    }
+                    break;
+                case "cp": //Копирование каталогов и файлов
+                    if( commands.Length>2 && Directory.Exists(commands[1]))
+                    {
+                        if (Directory.Exists(commands[1]) && !Directory.Exists(commands[2]))
+                        {
+                            CopyDirectory(commands[1], commands[2]);
+                        }
+                    }
+                    else if (commands.Length > 2 && File.Exists(commands[1]))
+                    {
+                        CopyFile(commands[1], commands[2]);
+                    }
+                    break;
+            }
+        }
+        UpdateConsole();
+    }
 
-    //}
+    /// <summary>
+    /// Метод, для копирование папки
+    /// </summary>
+    /// <param name="sourcepathName">Путь копирование папки</param>
+    /// <param name="destinationpathName">Путь целевого папок</param>
+    static void CopyDirectory(string sourcepathName, string destinationpathName)
+    {
+        Directory.CreateDirectory(destinationpathName);
+        foreach(string s1 in Directory.GetFiles(sourcepathName))
+        {
+            string s2 = destinationpathName + "\\" + Path.GetFileName(s1);
+            File.Copy(s1, s2);
+        }
+        foreach(var d1 in Directory.GetDirectories(sourcepathName))
+        {
+            CopyDirectory(d1, destinationpathName + "\\" + Path.GetFileName(d1));
+        }
+    }
+
+    /// <summary>
+    /// Метод, для копирование файлов
+    /// </summary>
+    /// <param name="sourcePathName">Путь копирование файлов</param>
+    /// <param name="destinationPathName">Путь целевого файла</param>
+    static void CopyFile(string sourcePathName, string destinationPathName) => File.Copy(sourcePathName, Path.Combine(destinationPathName + "\\" + Path.GetFileName(sourcePathName)));
+
+
+    /// <summary>
+    /// Метод, для рисование дерево каталогов директорий и файлов
+    /// </summary>
+    /// <param name="dir">текущий путь каталогоа</param>
+    /// <param name="page">номер страницы</param>
+    static void DrawTree(DirectoryInfo dir, int page)
+    {
+        StringBuilder tree = new StringBuilder();
+        GetTree(tree, dir, "", true);
+        string[] lines = tree.ToString().Split('\n');
+        File.WriteAllText(fileTree, tree.ToString());
+        DrawWindow(0, 0, WIDTH, 18);
+        (int currentLeft, int currentTop) = Console.GetCursorPosition();
+        int pageLines = 16;
+        int totalPages = (lines.Length + pageLines - 1) / pageLines;
+        if(page>totalPages)
+        {
+            page = totalPages;
+        }
+        for (int i = (page - 1) * pageLines, counter = 0; i < (page * pageLines); i++, counter++)
+        {
+            if (lines.Length - 1 > i)
+            {
+                Console.SetCursorPosition(currentLeft + 1, currentTop + 1 + counter);
+                Console.WriteLine(lines[i]);
+            }
+        }
+        //footer
+        string footer = $"╡ {page} of {totalPages} ╞";
+        Console.SetCursorPosition(WIDTH / 2 - footer.Length / 2, 17);
+        Console.Write(footer);
+
+    }
+    /// <summary>
+    /// Метод, для получение дерево каталогов
+    /// </summary>
+    /// <param name="tree">дерево каталогов</param>
+    /// <param name="directory">текущий каталог</param>
+    /// <param name="indent">отступ от начального консольного экрана</param>
+    /// <param name="lastDirectory">проверяет является ли последный директорий</param>
+    static void GetTree(StringBuilder tree, DirectoryInfo directory, string indent, bool lastDirectory)
+    {
+        tree.Append(indent);
+        if(lastDirectory)
+        {
+            tree.Append("└─");
+            indent += "  ";
+        }
+        else
+        {
+            tree.Append("├─");
+            indent += "│ ";
+        }
+        tree.Append($"{directory.Name}\n");
+        DirectoryInfo[] directories = directory.GetDirectories();
+        FileInfo[] files = directory.GetFiles();
+        for(int i=0;i<files.Length;i++)
+        {
+            if(i==files.Length-1)
+            {
+                tree.Append($"{indent}└─{files[i].Name}\n");
+            }
+            else
+            {
+                tree.Append($"{indent}├─{files[i].Name}\n");
+            }
+        }
+        for(int i=0;i<directories.Length;i++)
+        {
+            GetTree(tree, directories[i], indent, i == directories.Length - 1);
+        }
+    }
     #endregion
 }

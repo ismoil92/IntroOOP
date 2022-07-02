@@ -226,6 +226,29 @@ public static class FileManager
                         CopyFile(commands[1], commands[2]);
                     }
                     break;
+                case "rm":
+                    if(commands.Length>1 && Directory.Exists(commands[1]))
+                    {
+                        Directory.Delete(commands[1], true);
+                    }
+                    else if(commands.Length > 1 && File.Exists(commands[1]))
+                    {
+                        File.Delete(commands[1]);
+                    }
+                    break;
+                case "mv":
+                    if(commands.Length>2)
+                    {
+                        if (Directory.Exists(commands[1]) && !Directory.Exists(commands[2]))
+                        {
+                            Directory.Move(commands[1], commands[2]);
+                        }
+                        else if(File.Exists(commands[1]) && !File.Exists(commands[2]))
+                        {
+                            File.Move(commands[1], commands[2]);
+                        }
+                    }
+                    break;
             }
         }
         UpdateConsole();

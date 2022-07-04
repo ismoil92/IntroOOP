@@ -1,17 +1,285 @@
-<mxfile host="app.diagrams.net" modified="2022-07-03T17:02:15.729Z" agent="5.0 (Windows)" etag="y-X--s23M8akEuzeEz2R" version="20.0.4" type="github">
+<mxfile host="app.diagrams.net" modified="2022-07-04T06:40:23.773Z" agent="5.0 (Windows)" etag="azosakn7Z1Byij5Rb-oX" version="20.0.4" type="github">
   <diagram id="LRADa61S30Qln42eqijP" name="Page-1">
-    <mxGraphModel dx="782" dy="392" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="782" dy="1561" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
-        <mxCell id="pB7DixAc1fN-xtGuA9iD-1" value="&lt;div&gt;Команда&lt;/div&gt;" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;" vertex="1" parent="1">
+        <mxCell id="pB7DixAc1fN-xtGuA9iD-1" value="&lt;div&gt;Команда&lt;/div&gt;" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;" parent="1" vertex="1">
           <mxGeometry x="100" y="150" width="30" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="pB7DixAc1fN-xtGuA9iD-4" value="" style="endArrow=none;dashed=1;html=1;rounded=0;" edge="1" parent="1">
+        <mxCell id="pB7DixAc1fN-xtGuA9iD-4" value="" style="endArrow=none;dashed=1;html=1;rounded=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" edge="1" target="HxQG5yUMzC-GNClql8tX-2" source="pB7DixAc1fN-xtGuA9iD-1">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
             <mxPoint x="150" y="180" as="sourcePoint" />
             <mxPoint x="300" y="120" as="targetPoint" />
           </mxGeometry>
+        </mxCell>
+        <mxCell id="HxQG5yUMzC-GNClql8tX-2" value="&lt;div&gt;Выборка команд&lt;/div&gt;&lt;div&gt;switch&lt;br&gt;&lt;/div&gt;" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="280" y="140" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="HxQG5yUMzC-GNClql8tX-3" value="&lt;div&gt;конвертировать&lt;/div&gt;&lt;div&gt;строку в массив строк&lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="180" y="140" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="HxQG5yUMzC-GNClql8tX-4" value="" style="endArrow=none;dashed=1;html=1;rounded=0;entryX=0.058;entryY=0.738;entryDx=0;entryDy=0;exitX=1;exitY=0;exitDx=0;exitDy=0;entryPerimeter=0;" edge="1" parent="1" target="HxQG5yUMzC-GNClql8tX-5" source="HxQG5yUMzC-GNClql8tX-2">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="420" y="90" as="sourcePoint" />
+            <mxPoint x="590" y="30" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="HxQG5yUMzC-GNClql8tX-5" value="команда cd" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="480" y="30" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="HxQG5yUMzC-GNClql8tX-6" value="" style="endArrow=none;dashed=1;html=1;rounded=0;entryX=0.008;entryY=0.738;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" target="HxQG5yUMzC-GNClql8tX-7" source="HxQG5yUMzC-GNClql8tX-5">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="520" y="-20" as="sourcePoint" />
+            <mxPoint x="690" y="-80" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="HxQG5yUMzC-GNClql8tX-7" value="if (если длина массива больше 1)" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="670" y="-60" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="HxQG5yUMzC-GNClql8tX-8" value="" style="endArrow=none;dashed=1;html=1;rounded=0;entryX=0.033;entryY=0.675;entryDx=0;entryDy=0;exitX=1;exitY=0;exitDx=0;exitDy=0;entryPerimeter=0;" edge="1" parent="1" target="HxQG5yUMzC-GNClql8tX-9" source="HxQG5yUMzC-GNClql8tX-7">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="700" y="-100" as="sourcePoint" />
+            <mxPoint x="870" y="-160" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="HxQG5yUMzC-GNClql8tX-9" value="&lt;div&gt;if(если директорий&lt;/div&gt;&lt;div&gt;не пуста и не введено команда ..)&lt;/div&gt;" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="850" y="-140" width="140" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="HxQG5yUMzC-GNClql8tX-10" value="" style="endArrow=none;dashed=1;html=1;rounded=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;exitX=1;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" target="HxQG5yUMzC-GNClql8tX-11" source="HxQG5yUMzC-GNClql8tX-7">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="730" y="50" as="sourcePoint" />
+            <mxPoint x="900" y="-10" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="HxQG5yUMzC-GNClql8tX-11" value="if(если введено команда ..)" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="880" y="10" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="HxQG5yUMzC-GNClql8tX-12" value="" style="endArrow=none;dashed=1;html=1;rounded=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="1" target="HxQG5yUMzC-GNClql8tX-13" source="HxQG5yUMzC-GNClql8tX-9">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="782.4264068711927" y="18.284271247461675" as="sourcePoint" />
+            <mxPoint x="910" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="HxQG5yUMzC-GNClql8tX-13" value="&lt;div&gt;переход на другую&lt;/div&gt;&lt;div&gt;директорию&lt;br&gt;&lt;/div&gt;" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="1090" y="-140" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="HxQG5yUMzC-GNClql8tX-15" value="" style="endArrow=none;dashed=1;html=1;rounded=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="1" target="HxQG5yUMzC-GNClql8tX-16">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="1000" y="50" as="sourcePoint" />
+            <mxPoint x="920" y="150" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="HxQG5yUMzC-GNClql8tX-16" value="&lt;div&gt;переход на родительсикй директорий (вверх)&lt;br&gt;&lt;/div&gt;" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="1100" y="10" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="HxQG5yUMzC-GNClql8tX-17" value="" style="endArrow=none;dashed=1;html=1;rounded=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;exitX=0.975;exitY=0.738;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="1" target="HxQG5yUMzC-GNClql8tX-18" source="HxQG5yUMzC-GNClql8tX-2">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="431.216406871193" y="311.7157287525381" as="sourcePoint" />
+            <mxPoint x="638.79" y="190" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="HxQG5yUMzC-GNClql8tX-18" value="&lt;div&gt;команда ls&lt;/div&gt;" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="489.99999999999994" y="190" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="HxQG5yUMzC-GNClql8tX-19" value="" style="endArrow=none;dashed=1;html=1;rounded=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" target="HxQG5yUMzC-GNClql8tX-20" source="HxQG5yUMzC-GNClql8tX-18">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="632.426406871193" y="311.7157287525381" as="sourcePoint" />
+            <mxPoint x="840" y="190" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="HxQG5yUMzC-GNClql8tX-20" value="if(если длина массива больше 1 и путь директорий не пуста)" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="730" y="190" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="HxQG5yUMzC-GNClql8tX-21" value="" style="endArrow=none;dashed=1;html=1;rounded=0;entryX=0.058;entryY=0.738;entryDx=0;entryDy=0;exitX=1;exitY=0;exitDx=0;exitDy=0;entryPerimeter=0;" edge="1" parent="1" target="HxQG5yUMzC-GNClql8tX-22">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="849.9964068711929" y="219.9957287525381" as="sourcePoint" />
+            <mxPoint x="1057.57" y="98.28" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="HxQG5yUMzC-GNClql8tX-22" value="if(если длина массива больше 3 и третий элемент равен &quot;-p&quot; и четвёртый элемент преобразуется в число)" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="947.57" y="98.28" width="152.43" height="131.72" as="geometry" />
+        </mxCell>
+        <mxCell id="HxQG5yUMzC-GNClql8tX-23" value="" style="endArrow=none;dashed=1;html=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="1" source="HxQG5yUMzC-GNClql8tX-22">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="1131.996406871193" y="229.9957287525381" as="sourcePoint" />
+            <mxPoint x="1240" y="160" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="HxQG5yUMzC-GNClql8tX-24" value="Нарисовать дерево каталогов в текущий странице" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="1229.5700000000002" y="108.28" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="HxQG5yUMzC-GNClql8tX-25" value="" style="endArrow=none;dashed=1;html=1;rounded=0;exitX=0.987;exitY=0.712;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="1" source="HxQG5yUMzC-GNClql8tX-22">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="1080" y="160" as="sourcePoint" />
+            <mxPoint x="1240" y="240" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="HxQG5yUMzC-GNClql8tX-26" value="Нарисовать дерево каталогов в первую страницу" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="1240.0000000000002" y="200" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="HxQG5yUMzC-GNClql8tX-27" value="" style="endArrow=none;dashed=1;html=1;rounded=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;exitX=0.742;exitY=0.963;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="1" target="HxQG5yUMzC-GNClql8tX-28" source="HxQG5yUMzC-GNClql8tX-2">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="387" y="309.03999999999996" as="sourcePoint" />
+            <mxPoint x="628.79" y="300" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="HxQG5yUMzC-GNClql8tX-28" value="&lt;div&gt;команда cp&lt;/div&gt;" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="469.99999999999994" y="350" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="HxQG5yUMzC-GNClql8tX-29" value="" style="endArrow=none;dashed=1;html=1;rounded=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;exitX=1;exitY=0;exitDx=0;exitDy=0;" edge="1" parent="1" target="HxQG5yUMzC-GNClql8tX-30" source="HxQG5yUMzC-GNClql8tX-28">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="540" y="279.03999999999996" as="sourcePoint" />
+            <mxPoint x="781.79" y="270" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="HxQG5yUMzC-GNClql8tX-30" value="if(если длина массива больше 2 и второй элемент (директорий) массива не пустой)" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="633" y="270" width="147" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="HxQG5yUMzC-GNClql8tX-31" value="" style="endArrow=none;dashed=1;html=1;rounded=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;exitX=1.007;exitY=0.57;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="1" target="HxQG5yUMzC-GNClql8tX-32" source="HxQG5yUMzC-GNClql8tX-30">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="779.998" y="312" as="sourcePoint" />
+            <mxPoint x="1019.73" y="280" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="HxQG5yUMzC-GNClql8tX-32" value="if(если первый директорий не пустой и второй директорий пустой)" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="810" y="270" width="180.94" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="HxQG5yUMzC-GNClql8tX-33" value="" style="endArrow=none;dashed=1;html=1;rounded=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="1" target="HxQG5yUMzC-GNClql8tX-34" source="HxQG5yUMzC-GNClql8tX-32">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="990.9397866454444" y="300.29226981871784" as="sourcePoint" />
+            <mxPoint x="1250.81" y="280" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="HxQG5yUMzC-GNClql8tX-34" value="Копировать директорий" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="1102.02" y="280" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="HxQG5yUMzC-GNClql8tX-35" value="" style="endArrow=none;dashed=1;html=1;rounded=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;exitX=0.983;exitY=0.675;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="1" target="HxQG5yUMzC-GNClql8tX-36" source="HxQG5yUMzC-GNClql8tX-28">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="582.4264068711927" y="481.71572875253787" as="sourcePoint" />
+            <mxPoint x="811.79" y="380" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="HxQG5yUMzC-GNClql8tX-36" value="if(если длина массива больше 2 и второй элемент (файл) массива не пустой)" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="663" y="380" width="147" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="HxQG5yUMzC-GNClql8tX-37" value="" style="endArrow=none;dashed=1;html=1;rounded=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;exitX=0.993;exitY=0.63;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="1" target="HxQG5yUMzC-GNClql8tX-38" source="HxQG5yUMzC-GNClql8tX-36">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="1000.94" y="325" as="sourcePoint" />
+            <mxPoint x="1260.81" y="290" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="870" y="440" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="HxQG5yUMzC-GNClql8tX-38" value="Копировать файлы" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="1060" y="390" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="HxQG5yUMzC-GNClql8tX-39" value="" style="endArrow=none;dashed=1;html=1;rounded=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;exitX=0.35;exitY=0.988;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="1" target="HxQG5yUMzC-GNClql8tX-40" source="HxQG5yUMzC-GNClql8tX-2">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="349.99999999999994" y="339.99999999999994" as="sourcePoint" />
+            <mxPoint x="609.75" y="422.96" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="HxQG5yUMzC-GNClql8tX-40" value="&lt;div&gt;команда rm&lt;/div&gt;" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="429.99999999999994" y="490" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="HxQG5yUMzC-GNClql8tX-41" value="" style="endArrow=none;dashed=1;html=1;rounded=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="1" target="HxQG5yUMzC-GNClql8tX-42" source="HxQG5yUMzC-GNClql8tX-40">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="590" y="524" as="sourcePoint" />
+            <mxPoint x="813.8299999999999" y="500" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="HxQG5yUMzC-GNClql8tX-42" value="if(если длина массива больше 1 и второй элемент (директорий) массива не пустой)" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="665.04" y="500" width="147" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="HxQG5yUMzC-GNClql8tX-43" value="" style="endArrow=none;dashed=1;html=1;rounded=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;exitX=0.983;exitY=0.675;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="1" target="HxQG5yUMzC-GNClql8tX-44">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="812.04" y="544" as="sourcePoint" />
+            <mxPoint x="1035.87" y="520" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="HxQG5yUMzC-GNClql8tX-44" value="Удаление директорий" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="899.9999999999999" y="500" width="147" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="HxQG5yUMzC-GNClql8tX-45" value="" style="endArrow=none;dashed=1;html=1;rounded=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;exitX=1;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" target="HxQG5yUMzC-GNClql8tX-46" source="HxQG5yUMzC-GNClql8tX-40">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="510" y="710" as="sourcePoint" />
+            <mxPoint x="813.8299999999999" y="610" as="targetPoint" />
+            <Array as="points" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="HxQG5yUMzC-GNClql8tX-46" value="if(если длина массива больше 1 и второй элемент (файла) массива не пустой)" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="700" y="620" width="147" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="HxQG5yUMzC-GNClql8tX-47" value="" style="endArrow=none;dashed=1;html=1;rounded=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;exitX=0.983;exitY=0.675;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="1" target="HxQG5yUMzC-GNClql8tX-48">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="812.04" y="654" as="sourcePoint" />
+            <mxPoint x="1035.87" y="630" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="HxQG5yUMzC-GNClql8tX-48" value="Удаление файла" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="899.9999999999999" y="610" width="147" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="HxQG5yUMzC-GNClql8tX-49" value="" style="endArrow=none;dashed=1;html=1;rounded=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;exitX=0.083;exitY=0.825;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="1" target="HxQG5yUMzC-GNClql8tX-50" source="HxQG5yUMzC-GNClql8tX-2">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="302" y="339.52" as="sourcePoint" />
+            <mxPoint x="589.75" y="543.4399999999999" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="HxQG5yUMzC-GNClql8tX-50" value="&lt;div&gt;команда mv&lt;/div&gt;" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="369.99999999999994" y="680.48" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="HxQG5yUMzC-GNClql8tX-51" value="" style="endArrow=none;dashed=1;html=1;rounded=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" source="HxQG5yUMzC-GNClql8tX-50">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="400" y="760.48" as="sourcePoint" />
+            <mxPoint x="430" y="870" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="HxQG5yUMzC-GNClql8tX-53" value="if(если длина массива больше 2)" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="369.99999999999994" y="870" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="HxQG5yUMzC-GNClql8tX-54" value="" style="endArrow=none;dashed=1;html=1;rounded=0;" edge="1" parent="1" source="HxQG5yUMzC-GNClql8tX-53">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="650" y="670" as="sourcePoint" />
+            <mxPoint x="600" y="840" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="550" y="840" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="HxQG5yUMzC-GNClql8tX-55" value="if(если первый директорий не пуста, и второй директорий пуста)" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="600" y="800" width="150" height="79.52" as="geometry" />
+        </mxCell>
+        <mxCell id="HxQG5yUMzC-GNClql8tX-56" value="" style="endArrow=none;dashed=1;html=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="1" source="HxQG5yUMzC-GNClql8tX-55">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="930.94" y="730" as="sourcePoint" />
+            <mxPoint x="930.94" y="839.52" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="HxQG5yUMzC-GNClql8tX-57" value="Перемещение директорий" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="899.9999999999999" y="800" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="HxQG5yUMzC-GNClql8tX-58" value="" style="endArrow=none;dashed=1;html=1;rounded=0;exitX=1;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" source="HxQG5yUMzC-GNClql8tX-53">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="480.0046016824127" y="1023.6598156852592" as="sourcePoint" />
+            <mxPoint x="604.85" y="980" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="554.85" y="980" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="HxQG5yUMzC-GNClql8tX-59" value="if(если первый файл не пуста, и второй файл пуста)" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="604.85" y="940" width="150" height="79.52" as="geometry" />
+        </mxCell>
+        <mxCell id="HxQG5yUMzC-GNClql8tX-60" value="" style="endArrow=none;dashed=1;html=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="754.8499999999975" y="979.2800000000002" as="sourcePoint" />
+            <mxPoint x="935.7900000000001" y="979.04" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="HxQG5yUMzC-GNClql8tX-61" value="Перемещение файла" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="904.8499999999999" y="939.52" width="120" height="80" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>

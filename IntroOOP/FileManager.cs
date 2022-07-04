@@ -226,7 +226,7 @@ public static class FileManager
                         CopyFile(commands[1], commands[2]);
                     }
                     break;
-                case "rm":
+                case "rm": // Удаление директорий и файла
                     if(commands.Length>1 && Directory.Exists(commands[1]))
                     {
                         Directory.Delete(commands[1], true);
@@ -236,7 +236,7 @@ public static class FileManager
                         File.Delete(commands[1]);
                     }
                     break;
-                case "mv":
+                case "mv": // Перемещение директорий и файла
                     if(commands.Length>2)
                     {
                         if (Directory.Exists(commands[1]) && !Directory.Exists(commands[2]))

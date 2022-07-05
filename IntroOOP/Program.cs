@@ -2,6 +2,7 @@
 using IntroOOP.Task2;
 using IntroOOP.Task3;
 using IntroOOP.Task4;
+using IntroOOP.Task5;
 using IntroOOP;
 
 
@@ -118,10 +119,55 @@ static void Task4()
     account2.Print();
 }
 
-Task4();
-//Task3();
-//Task2();
-//Task1();
+
+/// <summary>
+/// Домашняя работа номер 5.
+/// </summary>
+static void Task5()
+{
+    Console.WriteLine("Домашняя работа номер 5.");
+    Console.WriteLine("===============================");
+    Console.WriteLine();
+    Console.Write("Введите сумму для снятий денег:");
+    int result = AccountBankTask5.TakeOffDeposite(Convert.ToInt32(Console.ReadLine()));
+    Console.WriteLine(result);
+}
+
+/// <summary>
+/// Метод, для выбора задач
+/// </summary>
+static void SelectTask()
+{
+    Console.WriteLine("Задача номер 1");
+    Console.WriteLine("Задача номер 2");
+    Console.WriteLine("Задача номер 3");
+    Console.WriteLine("Задача номер 4");
+    Console.WriteLine("Задача номер 5");
+    Console.Write("Выберите задачу 1-5:");
+    int numb = Convert.ToInt32(Console.ReadLine());
+    Console.WriteLine();
+    switch (numb)
+    {
+        case 1:
+            Task1();
+            break;
+        case 2:
+            Task2();
+            break;
+        case 3:
+            Task3();
+            break;
+        case 4:
+            Task4();
+            break;
+        case 5:
+            Task5();
+            break;
+        default:
+            Console.WriteLine("Введите число от 1 до 5 включительно");
+            break;
+    }
+}
 
 
-
+SelectTask();

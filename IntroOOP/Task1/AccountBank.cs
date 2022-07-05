@@ -1,9 +1,9 @@
 ﻿namespace IntroOOP.Task1;
 public class AccountBank
 {
-     int accountNumber;
-     int balance;
-    BankTypeAccount bankTypeAccount;
+    private int accountNumber;
+    private int balance;
+    private BankTypeAccount bankTypeAccount;
 
     /// <summary>
     /// Метод, для записи номер счёта

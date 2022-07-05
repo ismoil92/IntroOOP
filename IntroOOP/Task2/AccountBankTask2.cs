@@ -1,9 +1,9 @@
 ﻿namespace IntroOOP.Task2;
 public class AccountBankTask2
 {
-   int balance;
-   BankTypeAccount bankTypeAccount;
-   static int _accountNumber=111222333;
+   private int balance;
+   private BankTypeAccount bankTypeAccount;
+   private static int _accountNumber=111222333;
 
     /// <summary>
     /// Метод, для записи баланса

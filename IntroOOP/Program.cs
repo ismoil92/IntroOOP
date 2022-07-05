@@ -1,5 +1,6 @@
 ﻿using IntroOOP.Task1;
 using IntroOOP.Task2;
+using IntroOOP.Task3;
 using IntroOOP;
 
 static void PrintTask1(AccountBank accountBank) => Console.WriteLine($"Номер счёта:{accountBank.GetAccountNumber()}," +
@@ -69,7 +70,31 @@ static void Task2()
     PrintTask2(account2);
 }
 
-Task2();
+/// <summary>
+/// Домашняя работа номер 3.
+/// </summary>
+static void Task3()
+{
+    Console.WriteLine("Домашняя работа номер 2.");
+    Console.WriteLine("===============================");
+    Console.WriteLine();
+
+    AccountBankTask3 account1 = new AccountBankTask3();
+    account1.Print();
+    Console.WriteLine();
+    AccountBankTask3 account2 = new AccountBankTask3(100000);
+    account2.Print();
+    Console.WriteLine();
+    AccountBankTask3 account3 = new AccountBankTask3(BankTypeAccount.Депозитный);
+    account3.Print();
+    Console.WriteLine();
+    AccountBankTask3 account4 = new AccountBankTask3(150000, BankTypeAccount.Кредитный);
+    account4.Print();
+    Console.WriteLine();
+}
+
+Task3();
+//Task2();
 //Task1();
 
 

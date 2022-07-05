@@ -1,15 +1,23 @@
 ﻿using IntroOOP.Task1;
 using IntroOOP.Task2;
 using IntroOOP.Task3;
+using IntroOOP.Task4;
 using IntroOOP;
 
-static void PrintTask1(AccountBank accountBank) => Console.WriteLine($"Номер счёта:{accountBank.GetAccountNumber()}," +
-    $"Баланс:{accountBank.GetBalance()}, Тип номер счёта:{accountBank.GetBankTypeAccount()}");
 
+/// <summary>
+/// Метод, для информации первого задачи
+/// </summary>
+/// <param name="accountBank"> Объект первого задачи</param>
+static void PrintTask1(AccountBank accountBank) => Console.WriteLine($"Номер счёта:{accountBank.GetAccountNumber()}," +
+$"Баланс:{accountBank.GetBalance()}, Тип номер счёта:{accountBank.GetBankTypeAccount()}");
+
+/// <summary>
+///  Метод, для информации второго задачи
+/// </summary>
+/// <param name="account">Объект второго задачи</param>
 static void PrintTask2(AccountBankTask2 account) => Console.WriteLine($"Номер счёта:{AccountBankTask2.GetAccountNumber()}," +
     $"Баланс:{account.GetBalance()}, Тип номер счёта:{account.GetBankTypeAccount()}");
-
-
 
 /// <summary>
 /// Домашняя работа номер 1.
@@ -19,8 +27,8 @@ static void Task1()
     Console.WriteLine("Домашняя работа номер 1.");
     Console.WriteLine("===============================");
     Console.WriteLine();
-    AccountBank account1 = new AccountBank();
-    AccountBank account2 = new AccountBank();
+    AccountBank account1 = new ();
+    AccountBank account2 = new ();
 
     Console.Write("Введите номер счёта первого клиента:");
     account1.SetAccountNumber(Convert.ToInt32(Console.ReadLine()));
@@ -75,25 +83,43 @@ static void Task2()
 /// </summary>
 static void Task3()
 {
-    Console.WriteLine("Домашняя работа номер 2.");
+    Console.WriteLine("Домашняя работа номер 3.");
     Console.WriteLine("===============================");
     Console.WriteLine();
 
-    AccountBankTask3 account1 = new AccountBankTask3();
+    AccountBankTask3 account1 = new ();
     account1.Print();
     Console.WriteLine();
-    AccountBankTask3 account2 = new AccountBankTask3(100000);
+    AccountBankTask3 account2 = new (100000);
     account2.Print();
     Console.WriteLine();
-    AccountBankTask3 account3 = new AccountBankTask3(BankTypeAccount.Депозитный);
+    AccountBankTask3 account3 = new (BankTypeAccount.Депозитный);
     account3.Print();
     Console.WriteLine();
-    AccountBankTask3 account4 = new AccountBankTask3(150000, BankTypeAccount.Кредитный);
+    AccountBankTask3 account4 = new (150000, BankTypeAccount.Кредитный);
     account4.Print();
     Console.WriteLine();
 }
 
-Task3();
+/// <summary>
+/// Домашняя работа номер 4.
+/// </summary>
+static void Task4()
+{
+    Console.WriteLine("Домашняя работа номер 4.");
+    Console.WriteLine("===============================");
+    Console.WriteLine();
+
+    AccountBankTask4 account1 = new() { AccountNumber = 111222333, Balance = 100000, BankTypeAccount = BankTypeAccount.Расчётный };
+    AccountBankTask4 account2 = new() { AccountNumber = 222333111, Balance = 150000, BankTypeAccount = BankTypeAccount.Депозитный };
+
+    account1.Print();
+    Console.WriteLine();
+    account2.Print();
+}
+
+Task4();
+//Task3();
 //Task2();
 //Task1();
 

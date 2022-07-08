@@ -35,7 +35,12 @@ public class AccountBank
             return false;
     }
 
-
+    /// <summary>
+    /// Метод, для проверки слово на палиндрома, а также строку переварачивает обратно буквы
+    /// </summary>
+    /// <param name="str">строка которая проверяет на палиндром</param>
+    /// <param name="ispalyndrom">является ли строка палиндромом, если да возвращает true, если нет, то false</param>
+    /// <returns>возвращает новую строку</returns>
     public static string Reverse(string str, out bool ispalyndrom)
     {
         string result = "";

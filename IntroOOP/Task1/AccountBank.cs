@@ -1,7 +1,15 @@
-﻿namespace IntroOOP.Task1;
+﻿using System.Text;
+
+namespace IntroOOP.Task1;
 
 public class AccountBank
 {
+    #region FIELDS
+    private const string pathFile = @"C:\Users\User\source\repos\IntroOOP\IntroOOP\Data\file.txt";
+    private static string newPath = @"C:\Users\User\source\repos\IntroOOP\IntroOOP\Data\newfile.txt";
+    private static FileInfo fileInfo = new FileInfo(pathFile);
+    #endregion
+
     /// <summary>
     /// Свойство Номер счёта
     /// </summary>
@@ -57,6 +65,29 @@ public class AccountBank
             ispalyndrom = false;
         }
         return result;
+    }
+
+    /// <summary>
+    /// Метод, для отделения э-мейл от полного слово
+    /// </summary>
+    /// <param name="str">полное слово</param>
+    public static void SearchMail(ref string str)
+    {
+        string[] info = str.Split('&');
+        str = info[1].Trim();
+    }
+
+    public static void WriteFile()
+    {
+        StringBuilder stringBuilder = new StringBuilder();
+        using var reader = fileInfo.OpenText();
+        while(!reader.EndOfStream)
+        {
+            string line = reader.ReadLine()!;
+            SearchMail(ref line);
+            stringBuilder.Append(line+"\n");
+        }
+        File.WriteAllText(newPath, stringBuilder.ToString());
     }
 }
 

@@ -11,7 +11,7 @@ static void Task1()
     AccountBank account1 = new() { AccountNumber = 111222333, Balance = 100000, BankTypeAccount = BankTypeAccount.Credit };
     AccountBank account2 = new() { AccountNumber = 222333111, Balance = 200000, BankTypeAccount = BankTypeAccount.Deposit };
     Console.Write("Введите сумму для снятия денег в банке на счету:");
-    int money = int.Parse(Console.ReadLine());
+    int money = int.Parse(Console.ReadLine()!);
     if(account1.TransferMoney(ref account2, money))
     {
         Console.WriteLine("Перевод успешно проведено!!");
@@ -33,7 +33,7 @@ static void Task2()
     Console.WriteLine();
 
     Console.Write("Введите слов:");
-    string text = Console.ReadLine();
+    string text = Console.ReadLine()!;
     bool palyndrom;
     string result =AccountBank.Reverse(text, out palyndrom);
     if (palyndrom)
@@ -45,4 +45,21 @@ static void Task2()
         Console.WriteLine($"Слово не является палиндромом, Результат, слово буквы обратном порядке:{result}");
     }
 }
-Task2();
+
+
+/// <summary>
+/// Задача номер 3.
+/// </summary>
+static void Task3()
+{
+    Console.WriteLine("========   Задача номер 3 ======================");
+    Console.WriteLine("=================================================");
+    Console.WriteLine();
+
+
+
+    AccountBank.WriteFile();
+    Console.WriteLine("Запись на новый файл записан !!!");
+}
+
+Task3();

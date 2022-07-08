@@ -1,5 +1,9 @@
 ﻿using IntroOOP.Task1;
 
+
+SelectTasks();
+
+
 /// <summary>
 /// Задача номер 1.
 /// </summary>
@@ -62,4 +66,32 @@ static void Task3()
     Console.WriteLine("Запись на новый файл записан !!!");
 }
 
-Task3();
+/// <summary>
+/// Метод, для выбора задач.
+/// </summary>
+static void SelectTasks()
+{
+    Console.WriteLine("============Задача номер 1================");
+    Console.WriteLine("============Задача номер 2================");
+    Console.WriteLine("============Задача номер 3================");
+    Console.WriteLine("==========================================");
+    Console.WriteLine();
+
+    Console.Write("Выберите номер задач. 1 - 3:");
+    int number = int.Parse(Console.ReadLine()!);
+    switch(number)
+    {
+        case 1:
+            Task1();
+            break;
+        case 2:
+            Task2();
+            break;
+        case 3:
+            Task3();
+            break;
+        default:
+            Console.WriteLine("Вы ввели номер вне диапазона 1-3. Введите номер от 1 до 3");
+            break;
+    }
+}

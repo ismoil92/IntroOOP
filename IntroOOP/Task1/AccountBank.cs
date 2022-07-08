@@ -34,6 +34,25 @@ public class AccountBank
         else
             return false;
     }
+
+
+    public static string Reverse(string str, out bool ispalyndrom)
+    {
+        string result = "";
+        for(int i=str.Length-1; i>=0; i--)
+        {
+            result += str[i];
+        }
+        if(str==result)
+        {
+            ispalyndrom = true;
+        }
+        else
+        {
+            ispalyndrom = false;
+        }
+        return result;
+    }
 }
 
 /// <summary>

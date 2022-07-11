@@ -135,6 +135,9 @@ public class Building
     public int FindNumberOfFlatsOnStoreys(double height, int countStoreys) => ((int)height / countStoreys)/countStoreys;
 
 
+    /// <summary>
+    /// Метод, для вывода информации о зданий
+    /// </summary>
     public void Print() => Console.WriteLine($"Идентификатор:{uniqueID}, Высота:{height}, Количество этажей:{numberOfStoreys}  " +
         $"Количество квартир в одном подъезде:{numberOfFlats}, Количество подъезд:{entrances}");
 }

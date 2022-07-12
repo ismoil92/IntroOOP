@@ -14,15 +14,15 @@ static void Task2()
     Console.WriteLine("=================Задача номер 2===================");
     Console.WriteLine("==================================================");
     Console.WriteLine();
-    Creator.CreateBuild(12, 4, 8, 2);
-    Creator.CreateBuild(15, 5, 10, 3);
-    Creator.CreateBuild(16, 6, 11, 4);
-    Creator.CreateBuild(17, 7, 9, 5);
+    BuildingNumber2 building1 = Creator.CreateBuild(12, 4, 8, 2);
+    BuildingNumber2 building2 = Creator.CreateBuild(15, 5, 10, 3);
+    BuildingNumber2 building3 = Creator.CreateBuild(16, 6, 11, 4);
+    BuildingNumber2 building4 = Creator.CreateBuild(17, 7, 9, 5);
 
     Creator.RemoveBuild(3);
 
     Creator.UpdateBuild(4, new(12, 3, 4, 5));
-    Creator.CreateBuild(17, 7, 9, 5);
+    BuildingNumber2 building5 = Creator.CreateBuild(17, 7, 9, 5);
 }
 
 

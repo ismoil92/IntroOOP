@@ -25,10 +25,11 @@ public class Creator
     /// <param name="numbOfStorey">количество этажей в доме</param>
     /// <param name="numbOfFlat">количество квартир в доме</param>
     /// <param name="entrance">количество подъезда в доме</param>
-    public static void CreateBuild(double height, int numbOfStorey, int numbOfFlat, int entrance)
+    public static BuildingNumber2 CreateBuild(double height, int numbOfStorey, int numbOfFlat, int entrance)
     {
         BuildingNumber2 building = new(height, numbOfStorey, numbOfFlat, entrance);
         hashtable.Add(BuildingNumber2.UniqueID, building);
+        return building;
     }
 
 

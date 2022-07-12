@@ -25,6 +25,7 @@ public class Creator
     /// <param name="numbOfStorey">количество этажей в доме</param>
     /// <param name="numbOfFlat">количество квартир в доме</param>
     /// <param name="entrance">количество подъезда в доме</param>
+    ///<returns>возвращает объект класса BuildingNumber2</returns>
     public static BuildingNumber2 CreateBuild(double height, int numbOfStorey, int numbOfFlat, int entrance)
     {
         BuildingNumber2 building = new(height, numbOfStorey, numbOfFlat, entrance);
@@ -37,7 +38,7 @@ public class Creator
     /// Метод, для удаление объектов в хеш-таблице
     /// </summary>
     /// <param name="key">ключ для удаление объекта в хеш-таблице</param>
-    /// <returns></returns>
+    /// <returns>возвращает true если объект в хеш-таблице удалён, false если ключ в хеш-таблице не найден для удаления</returns>
     public static bool RemoveBuild(int key)
     {
         if(hashtable.ContainsKey(key))

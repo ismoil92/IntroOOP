@@ -1,9 +1,58 @@
 ﻿using IntroOOP.Task1;
 using IntroOOP.Task2;
-using System.Collections;
+using CreatorAndBuildings.Utilities;
 
 
-Task2();
+
+
+
+SelectTasks();
+/// <summary>
+/// Метод, для выбора задач
+/// </summary>
+static void SelectTasks()
+{
+    Console.WriteLine("==================Задача номер 1=======================");
+    Console.WriteLine("==================Задача номер 2=======================");
+    Console.WriteLine("==================Задача номер 3=======================");
+    Console.Write("Выберите задачу от, 1-3:");
+    int numb =int.Parse(Console.ReadLine()!);
+    switch(numb)
+    {
+        case 1:
+            Task1();
+            break;
+        case 2:
+            Task2();
+            break;
+        case 3:
+            Task3();
+            break;
+        default:
+            Console.WriteLine("Выберите задача в диапазоне 1-3.");
+            break;
+    }
+}
+
+/// <summary>
+/// Задача номер 3
+/// </summary>
+static void Task3()
+{
+    Console.WriteLine("=================Задача номер 3===================");
+    Console.WriteLine("==================================================");
+    Console.WriteLine();
+
+    BuildingTask3 building1 = CreatorTask3.CreateBuild(12, 4, 8, 2);
+    BuildingTask3 building2 = CreatorTask3.CreateBuild(15, 5, 10, 3);
+    BuildingTask3 building3 = CreatorTask3.CreateBuild(16, 6, 11, 4);
+    BuildingTask3 building4 = CreatorTask3.CreateBuild(17, 7, 9, 5);
+
+    CreatorTask3.RemoveBuild(3);
+
+    CreatorTask3.UpdateBuild(4, new(12, 3, 4, 5));
+    BuildingTask3 building5 = CreatorTask3.CreateBuild(17, 7, 9, 5);
+}
 
 
 /// <summary>

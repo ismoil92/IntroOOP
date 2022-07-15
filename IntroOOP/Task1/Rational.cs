@@ -363,7 +363,11 @@ public class Rational
         R2 = r2;
     }
 
-
+    /// <summary>
+    /// Переопределение метода Equals, для эквивалентности рациональный чисел
+    /// </summary>
+    /// <param name="obj">объект с которым будут сравнить</param>
+    /// <returns>возвращает true если они эквивалентные, false если они не эквивалентные</returns>
     public override bool Equals(object? obj)
     {
         if (obj == null)
@@ -378,6 +382,10 @@ public class Rational
         return Rational.Fraction(this) == Rational.Fraction(r);
     }
 
+    /// <summary>
+    /// Переопределение метода GetHashCode, для получение хеш-кода
+    /// </summary>
+    /// <returns>возвращает хеш-код</returns>
     public override int GetHashCode()
     {
         var hash = 397;
@@ -391,6 +399,10 @@ public class Rational
         return hash;
     }
 
+    /// <summary>
+    /// Переопределение метода ToString, для изменение формати строки
+    /// </summary>
+    /// <returns>возвращает новый формат строки</returns>
     public override string ToString()
     {
         return $"Числитель:{_numerator}, Знаменатель:{_denominator}, Десятичный дробь:{Fraction(new Rational(_numerator, _denominator))}";

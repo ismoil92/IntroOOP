@@ -4,17 +4,32 @@ namespace IntroOOP.Commands;
 
 public class ChangeDirectoryCommand : FileManagerCommand
 {
+    #region FIELDS
     private readonly IUserInterface userInterface;
-    private readonly FileManagerLogic fileManager;
 
+    private readonly FileManagerLogic fileManager;
+    #endregion
+
+    /// <summary>
+    /// Контруктор с двумя параметрами
+    /// </summary>
+    /// <param name="userInterface">интерфейс пользователя</param>
+    /// <param name="fileManager">логига файлового менеджера</param>
     public ChangeDirectoryCommand(IUserInterface userInterface, FileManagerLogic fileManager)
     {
         this.userInterface = userInterface;
         this.fileManager = fileManager;
     }
 
-    public override string Direction => "Изменение текущего каталога";
+    /// <summary>
+    /// Переопределенный свойства, содержимое о команд
+    /// </summary>
+    public override string Description => "Изменение текущего каталога";
 
+    /// <summary>
+    /// Переопределенный метод, для выполнение команд при ввода
+    /// </summary>
+    /// <param name="args">строка ввода команд</param>
     public override void Execute(string[] args)
     {
         if(args.Length != 2 || !string.IsNullOrEmpty(args[1]))

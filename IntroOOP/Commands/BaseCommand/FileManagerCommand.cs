@@ -2,7 +2,14 @@
 
 public abstract class FileManagerCommand
 {
-    public abstract string Direction { get; }
+    /// <summary>
+    /// Абстрактный свойство, сведение о команд
+    /// </summary>
+    public abstract string Description { get; }
 
+    /// <summary>
+    /// Абстрактный метод, для выполнение команд при вводе
+    /// </summary>
+    /// <param name="args">строка ввода команд</param>
     public abstract void Execute(string[] args);
 }

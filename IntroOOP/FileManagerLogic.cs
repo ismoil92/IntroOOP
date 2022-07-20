@@ -10,5 +10,5 @@ public class FileManagerLogic
 
     public DirectoryInfo CurrentDirectory { get; set; } = new("");
 
-    public IReadOnlyDictionary<string, FileManagerConsole> Commands { get; }
+    public IReadOnlyDictionary<string, FileManagerCommand> Commands { get; }
 }

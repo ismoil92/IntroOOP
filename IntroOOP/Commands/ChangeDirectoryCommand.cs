@@ -32,7 +32,7 @@ public class ChangeDirectoryCommand : FileManagerCommand
     /// <param name="args">строка ввода команд</param>
     public override void Execute(string[] args)
     {
-        if(args.Length != 2 || !string.IsNullOrEmpty(args[1]))
+        if(args.Length != 2 || string.IsNullOrWhiteSpace(args[1]))
         {
             userInterface.WriteLine("Для команды смены каталога необходимо указать один параметр -" +
                 "целевой путь");
@@ -50,17 +50,17 @@ public class ChangeDirectoryCommand : FileManagerCommand
                 userInterface.WriteLine("Невозможно подняться выше по дереву каталогов");
                 return;
             }
-            else if (Path.IsPathRooted(dir_path))
-                Path.Combine(fileManager.CurrentDirectory.FullName, dir_path);
-            directory = new DirectoryInfo(dir_path);
-            if(!directory.Exists)
-            {
-                userInterface.WriteLine($"Директория {directory} не существует");
-                return;
-            }
-            fileManager.CurrentDirectory = directory;
-            userInterface.WriteLine($"Текущая директория изменена на {directory.FullName}");
-            Directory.SetCurrentDirectory(directory.FullName);
         }
+        else if (Path.IsPathRooted(dir_path))
+            Path.Combine(fileManager.CurrentDirectory.FullName, dir_path);
+        directory = new DirectoryInfo(dir_path);
+        if (!directory.Exists)
+        {
+            userInterface.WriteLine($"Директория {directory} не существует");
+            return;
+        }
+        fileManager.CurrentDirectory = directory;
+        userInterface.WriteLine($"Текущая директория изменена на {directory.FullName}");
+        Directory.SetCurrentDirectory(directory.FullName);
     }
 }

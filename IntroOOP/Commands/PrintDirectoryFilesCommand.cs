@@ -49,6 +49,6 @@ public class PrintDirectoryFilesCommand : FileManagerCommand
             file_length+=file.Length;
         }
         userInterface.WriteLine("");
-        userInterface.WriteLine($"Директорий:{dir_count}, файлы:{file_count}, количество {file_length} байт");
+        userInterface.WriteLine($"Директорий {dir_count}, файлов{file_count}, суммарный размер {file_length} байт");
     }
 }

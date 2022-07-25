@@ -26,6 +26,6 @@ public class QuitCommand : FileManagerCommand
     /// <param name="args">строка ввода команд</param>
     public override void Execute(string[] args)
     {
-        //fileManager.Stop();
+        fileManager.Stop();
     }
 }

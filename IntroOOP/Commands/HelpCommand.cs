@@ -32,10 +32,13 @@ public class HelpCommand : FileManagerCommand
     /// <param name="args">строка ввода команд</param>
     public override void Execute(string[] args)
     {
-        userInterface.WriteLine("Файловый менеджер поддерживает следующие команды");
-        foreach(var (name, command) in fileManager.Commands)
+        userInterface.WriteLine("Файловый менеджер поддерживает следующие команды\n");
+        foreach (var (name, command) in fileManager.Commands)
         {
-            userInterface.WriteLine($"Название команд:{name}, описание:{command.Description}");
+            if(name=="listDir" || name=="drives")
+                userInterface.WriteLine($"Название команд: {name},\tописание: {command.Description}");
+            else
+                userInterface.WriteLine($"Название команд: {name},\t\tописание: {command.Description}");
         }
     }
 }

@@ -49,7 +49,11 @@ public class FileManagerLogic
             {"echo", new CreateFileCommand(userInterface, this) },         //echo [text] > [fileName] 
             {"rd", new DeleteDirectoryCommand(userInterface, this) },      //rd [path] conf - conf - дает уведомдение о том удалить ли этот директорий или нет
             {"del", new DeleteFileCommand(userInterface, this) },          //del /p [path]
-            {"rename", new RenameDirectoryCommand(userInterface, this) }   //rename [path] [new_name_dir]
+            {"rename", new RenameDirectoryCommand(userInterface, this) },  //rename [path] [new_name_dir]
+            {"ren", new RenameFileCommand(userInterface, this) },          //ren [path] [new_name_file]
+            {"cpdir", new CopyDirectoryCommand(userInterface, this) },     //cpdir [path1] [path2]
+            {"cpfile", new CopyFileCommand(userInterface, this) }         //cpfile [path1] [path2]
+
         };
     }
 

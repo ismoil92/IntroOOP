@@ -3,12 +3,14 @@ using System.Text;
 
 namespace IntroOOP.Commands;
 
-public class RenameDirectoryCommand : FileManagerCommand
+public class RenameFileCommand : FileManagerCommand
 {
     #region FIELDS
+
     private readonly IUserInterface _userInterface;
 
     private readonly FileManagerLogic _fileManager;
+
     #endregion
 
     /// <summary>
@@ -16,16 +18,17 @@ public class RenameDirectoryCommand : FileManagerCommand
     /// </summary>
     /// <param name="userInterface">интерфейс пользователя</param>
     /// <param name="fileManager">логика файлового менеджера</param>
-    public RenameDirectoryCommand(IUserInterface userInterface, FileManagerLogic fileManager)
+    public RenameFileCommand(IUserInterface userInterface, FileManagerLogic fileManager)
     {
-        _userInterface = userInterface;
-        _fileManager = fileManager;
+        _userInterface=userInterface;
+        _fileManager=fileManager;
     }
 
+
     /// <summary>
-    /// Переопределенный свойства, содержимое о команд
+    /// Переопределенный свойства, содержимое о команде
     /// </summary>
-    public override string Description => "Переименование папки";
+    public override string Description => "Переименование файла";
 
     /// <summary>
     /// Переопределенный метод, для выполнение команд при ввода
@@ -33,23 +36,23 @@ public class RenameDirectoryCommand : FileManagerCommand
     /// <param name="args">строка ввода команд</param>
     public override void Execute(string[] args)
     {
-        if (Directory.Exists(args[1]))
+        if (File.Exists(args[1]))
         {
-            int i = 0;
             StringBuilder sb = new StringBuilder();
-            foreach(var path in args[1].Trim().Split('\\'))
+            int i = 0;
+            foreach (var path in args[1].Trim().Split('\\'))
             {
-                if(i< args[1].Trim().Split('\\').Length-1)
+                if (i < args[1].Trim().Split('\\').Length - 1)
                 {
-                    sb.Append(path+"\\");
+                    sb.Append(path + "\\");
                 }
                 i++;
             }
             sb.Append(args[2]);
-            Directory.Move(args[1], sb.ToString());
-            _userInterface.WriteLine("Папка переименована ");
+            File.Move(args[1], sb.ToString());
+            _userInterface.WriteLine("Файл переименован");
         }
         else
-            _userInterface.WriteLine($"Директорий {args[1]}, пуста!!");
+            _userInterface.WriteLine($"Файл {args[1]}, не существует!!");
     }
 }

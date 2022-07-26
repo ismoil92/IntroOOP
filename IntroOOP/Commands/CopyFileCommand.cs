@@ -1,14 +1,15 @@
 ﻿using IntroOOP.Commands.BaseCommand;
-using System.Text;
 
 namespace IntroOOP.Commands;
 
-public class RenameDirectoryCommand : FileManagerCommand
+public class CopyFileCommand : FileManagerCommand
 {
     #region FIELDS
+
     private readonly IUserInterface _userInterface;
 
     private readonly FileManagerLogic _fileManager;
+
     #endregion
 
     /// <summary>
@@ -16,16 +17,18 @@ public class RenameDirectoryCommand : FileManagerCommand
     /// </summary>
     /// <param name="userInterface">интерфейс пользователя</param>
     /// <param name="fileManager">логика файлового менеджера</param>
-    public RenameDirectoryCommand(IUserInterface userInterface, FileManagerLogic fileManager)
+    public CopyFileCommand(IUserInterface userInterface, FileManagerLogic fileManager)
     {
         _userInterface = userInterface;
         _fileManager = fileManager;
     }
 
+    
     /// <summary>
     /// Переопределенный свойства, содержимое о команд
     /// </summary>
-    public override string Description => "Переименование папки";
+    public override string Description => "Копирование файла";
+
 
     /// <summary>
     /// Переопределенный метод, для выполнение команд при ввода
@@ -33,23 +36,12 @@ public class RenameDirectoryCommand : FileManagerCommand
     /// <param name="args">строка ввода команд</param>
     public override void Execute(string[] args)
     {
-        if (Directory.Exists(args[1]))
+        if (File.Exists(args[1]) && !File.Exists(args[2]))
         {
-            int i = 0;
-            StringBuilder sb = new StringBuilder();
-            foreach(var path in args[1].Trim().Split('\\'))
-            {
-                if(i< args[1].Trim().Split('\\').Length-1)
-                {
-                    sb.Append(path+"\\");
-                }
-                i++;
-            }
-            sb.Append(args[2]);
-            Directory.Move(args[1], sb.ToString());
-            _userInterface.WriteLine("Папка переименована ");
+            File.Copy(args[1], args[2]);
+            _userInterface.WriteLine("Файл с копирован");
         }
         else
-            _userInterface.WriteLine($"Директорий {args[1]}, пуста!!");
+            _userInterface.WriteLine("Ошибка пути файла!!!");
     }
 }

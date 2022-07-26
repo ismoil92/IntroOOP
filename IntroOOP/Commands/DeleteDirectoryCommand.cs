@@ -55,8 +55,7 @@ public class DeleteDirectoryCommand : FileManagerCommand
                 bool istrue = true;
                 while (istrue)
                 {
-                    userInterface.Write("Вы уверены что хотите удалить, если да нажмите кнопку y," +
-                    "если нет нажмите кнопку n:");
+                    userInterface.Write("Удалить Да[y/Y] или Нет[n/N]?:");
                     symbol = char.Parse(Console.ReadLine()!);
                     switch (symbol)
                     {
@@ -78,9 +77,7 @@ public class DeleteDirectoryCommand : FileManagerCommand
                 }
             }
             else
-            {
                 userInterface.WriteLine($"Директорий {args[1]} не существует");
-            }
         }
     }
 }

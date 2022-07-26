@@ -45,9 +45,11 @@ public class FileManagerLogic
             {"cd", new ChangeDirectoryCommand(userInterface, this) },
             {"exit", quitcommand },
             {"quit", quitcommand },
-            {"mkdir", new CreateDirectoryCommand(userInterface, this) }, //mkdir [path]
-            {"echo", new CreateFileCommand(userInterface, this) },       //echo [text] > [fileName] 
-            {"rd", new DeleteDirectoryCommand(userInterface, this) }     //rd [path] conf - conf - дает уведомдение о том удалить ли этот директорий или нет
+            {"mkdir", new CreateDirectoryCommand(userInterface, this) },   //mkdir [path]
+            {"echo", new CreateFileCommand(userInterface, this) },         //echo [text] > [fileName] 
+            {"rd", new DeleteDirectoryCommand(userInterface, this) },      //rd [path] conf - conf - дает уведомдение о том удалить ли этот директорий или нет
+            {"del", new DeleteFileCommand(userInterface, this) },          //del /p [path]
+            {"rename", new RenameDirectoryCommand(userInterface, this) }   //rename [path] [new_name_dir]
         };
     }
 

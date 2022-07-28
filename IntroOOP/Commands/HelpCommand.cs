@@ -35,7 +35,8 @@ public class HelpCommand : FileManagerCommand
         userInterface.WriteLine("Файловый менеджер поддерживает следующие команды\n");
         foreach (var (name, command) in fileManager.Commands)
         {
-            if(name=="listDir" || name=="drives")
+            if(name=="listDir" || name=="drives" || name=="rename" || name=="cpfile" || 
+                name=="movedir" || name=="movefile")
                 userInterface.WriteLine($"Название команд: {name},\tописание: {command.Description}");
             else
                 userInterface.WriteLine($"Название команд: {name},\t\tописание: {command.Description}");

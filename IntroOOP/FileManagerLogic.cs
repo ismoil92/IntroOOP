@@ -48,11 +48,15 @@ public class FileManagerLogic
             {"mkdir", new CreateDirectoryCommand(userInterface, this) },   //mkdir [path]
             {"echo", new CreateFileCommand(userInterface, this) },         //echo [text] > [fileName] 
             {"rd", new DeleteDirectoryCommand(userInterface, this) },      //rd [path] conf - conf - дает уведомдение о том удалить ли этот директорий или нет
-            {"del", new DeleteFileCommand(userInterface, this) },          //del /p [path]
+            {"del", new DeleteFileCommand(userInterface, this) },          //del /p [path]      /p - даёт уведомление о том удалить ли этот директорий или нет
             {"rename", new RenameDirectoryCommand(userInterface, this) },  //rename [path] [new_name_dir]
             {"ren", new RenameFileCommand(userInterface, this) },          //ren [path] [new_name_file]
             {"cpdir", new CopyDirectoryCommand(userInterface, this) },     //cpdir [path1] [path2]
-            {"cpfile", new CopyFileCommand(userInterface, this) }         //cpfile [path1] [path2]
+            {"cpfile", new CopyFileCommand(userInterface, this) },         //cpfile [path1] [path2]
+            {"movedir", new MoveDirectoryCommand(userInterface, this) },   //movedir [pathdir1] [pathdir2]
+            {"movefile", new MoveFileCommand(userInterface, this) },       //movefile [pathfile1] [pathfile2]
+            {"find", new SearchToMaskCommand(userInterface, this) },       //find [path] [mask]
+            {"clear", new ClearConsoleCommand(this) }
 
         };
     }

@@ -42,7 +42,7 @@ public class CreateFileCommand : FileManagerCommand
         string[] _commands = commands!.Split('>');
         string[] beforeCommand = _commands[0].Trim().Split(' ');
         string[] afterCommand = _commands[1].Trim().Split(' ');
-        if(afterCommand.Length==1)
+        if(afterCommand.Length==0)
         {
             userInterface.WriteLine("Имя файла не введено");
             return;
@@ -59,6 +59,7 @@ public class CreateFileCommand : FileManagerCommand
                 {
                     byte[] bytes = Encoding.Default.GetBytes(stringBuilder.ToString());
                     fileStream.Write(bytes, 0, bytes.Length);
+                    userInterface.WriteLine("Файл создан");
                 }
             }
             else
@@ -72,6 +73,7 @@ public class CreateFileCommand : FileManagerCommand
                 {
                     byte[] bytes = Encoding.Default.GetBytes(stringBuilder.ToString());
                     fileStream.Write(bytes, 0, bytes.Length);
+                    userInterface.WriteLine("Файл создан");
                 }
             }
             else

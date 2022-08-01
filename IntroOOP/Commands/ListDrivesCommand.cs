@@ -27,7 +27,7 @@ public class ListDrivesCommand : FileManagerCommand
     public override void Execute(string[] args)
     {
         var drivers = DriveInfo.GetDrives();
-        userInterface.WriteLine($"В файловом системе существует дисков:{drivers.Length}");
+        userInterface.WriteLine($"В файловой системе существует дисков:{drivers.Length}");
         foreach (var drive in drivers)
             userInterface.WriteLine($"{drive.Name}");
     }

@@ -46,9 +46,14 @@ public class DeleteFileCommand : FileManagerCommand
                     {
                         case 'y':
                         case 'Y':
-                            File.Delete(args[2]);
-                            _userInterface.WriteLine("Файл удален!");
-                            istrue = false;
+                            if (File.Exists(args[2]))
+                            {
+                                File.Delete(args[2]);
+                                _userInterface.WriteLine("Файл удален!");
+                                istrue = false;
+                            }
+                            else
+                                _userInterface.WriteLine("Путь к файлу не существует");
                             break;
                         case 'n':
                         case 'N':

@@ -42,7 +42,7 @@ namespace IntroOOP.Commands;
             if(!directory.Exists)
             {
                 directory.Create();
-                _userInterface.WriteLine("директорий создана!");
+                _userInterface.WriteLine("Директория создана!");
             }
             else
             {

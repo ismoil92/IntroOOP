@@ -24,7 +24,7 @@ public class DeleteDirectoryCommand : FileManagerCommand
     /// <summary>
     /// Переопределенный свойство, содержимое о команд
     /// </summary>
-    public override string Description => "Удаление директорий вместе содержимым";
+    public override string Description => "Удаление директории вместе с содержимым";
 
     /// <summary>
     /// Переопределенный метод, для выполнение команд при ввода
@@ -62,7 +62,7 @@ public class DeleteDirectoryCommand : FileManagerCommand
                         case 'y':
                         case 'Y':
                             directory.Delete(true);
-                            userInterface.WriteLine("Директорий удалена полностью");
+                            userInterface.WriteLine("Директория удалена полностью");
                             istrue = false;
                             break;
                         case 'n':

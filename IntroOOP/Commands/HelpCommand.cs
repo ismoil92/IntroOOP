@@ -24,7 +24,7 @@ public class HelpCommand : FileManagerCommand
     /// <summary>
     /// Переопределенный свойства, содержимое о команде
     /// </summary>
-    public override string Description => "Справка о консольных команд";
+    public override string Description => "Справка о консольных командах";
 
     /// <summary>
     /// Переопределенный метод, для выполнение команд при ввода
@@ -32,7 +32,7 @@ public class HelpCommand : FileManagerCommand
     /// <param name="args">строка ввода команд</param>
     public override void Execute(string[] args)
     {
-        userInterface.WriteLine("Файловый менеджер поддерживает следующие команды\n");
+        userInterface.WriteLine("Файловой системе Справка о консольных командах\n");
         foreach (var (name, command) in fileManager.Commands)
         {
             if(name=="listDir" || name=="drives" || name=="rename" || name=="cpfile" || 

@@ -39,7 +39,7 @@ public class CopyFileCommand : FileManagerCommand
         if (File.Exists(args[1]) && !File.Exists(args[2]))
         {
             File.Copy(args[1], args[2]);
-            _userInterface.WriteLine("Файл с копирован");
+            _userInterface.WriteLine("Файл скопирован");
         }
         else
             _userInterface.WriteLine("Ошибка пути файла!!!");

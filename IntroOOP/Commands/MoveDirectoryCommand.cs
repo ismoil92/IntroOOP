@@ -29,7 +29,7 @@ public class MoveDirectoryCommand : FileManagerCommand
     /// <summary>
     /// Переопределенный свойства, содержимое о команд
     /// </summary>
-    public override string Description => "Перемещение директорий";
+    public override string Description => "Перемещение директории";
 
 
     /// <summary>
@@ -41,7 +41,7 @@ public class MoveDirectoryCommand : FileManagerCommand
         if (Directory.Exists(args[1]) &&!Directory.Exists(args[2]))
         {
             Directory.Move(args[1], args[2]);
-            _userInterface.WriteLine($"Папка {args[1]}, перемещён");
+            _userInterface.WriteLine($"Папка {args[1]}, перемещена");
         }
         else
             _userInterface.WriteLine("Ошибка пути директорий");
